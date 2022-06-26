@@ -10,54 +10,31 @@ Document
 /**
 Use a better box model (opinionated).
 */
-*{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-}
-
-:root{
-  --color-bg:#1f1f38;
-  --color-primary: #dff2ff;
-  --color-secondary: #7b7ba9;
-  --color-primary-variant: rgba(77,181,255,0.4);
-  --color-secondary-variant: #bebee4;
-  --color-white: #fff;
-  --color-light: rgba(255,255,255,0.6);
-  --container-width-lg:75%;
-  --container-width-md:86%;
-  --container-width-sm:90%;
-  --transition: all 400ms ease;
-
-}
-html{
-  scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar{
-  display: none;
-}
-
-body{
-  font-family: 'Nunito', sans-serif;
-  line-height: 1.7;
 }
 
 /**
 Use a more readable tab size (opinionated).
 */
 
+:root {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
 
 /**
 1. Correct the line height in all browsers.
 2. Prevent adjustments of font size after orientation changes in iOS.
 */
 
-
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+}
 
 /*
 Sections
@@ -68,11 +45,26 @@ Sections
 Remove the margin in all browsers.
 */
 
+body {
+  margin: 0;
+}
 
 /**
 Improve consistency of default fonts in all browsers. (https://github.com/sindresorhus/modern-normalize/issues/3)
 */
 
+body {
+  font-family:
+		system-ui,
+		-apple-system, /* Firefox supports this but not yet `system-ui` */
+		'Segoe UI',
+		Roboto,
+		Helvetica,
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji';
+}
 
 /*
 Grouping content
@@ -338,13 +330,20 @@ ul {
  *    to override it to ensure consistency even when using the default theme.
  */
 
+html {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; /* 1 */
+  line-height: 1.5; /* 2 */
+}
 
 /**
  * Inherit font-family and line-height from `html` so users can set them as
  * a class directly on the `html` element.
  */
 
-
+body {
+  font-family: inherit;
+  line-height: inherit;
+}
 
 /**
  * 1. Prevent padding and border from affecting element width.
@@ -399,6 +398,9 @@ hr {
  * https://github.com/tailwindcss/tailwindcss/issues/362
  */
 
+img {
+  border-style: solid;
+}
 
 textarea {
   resize: vertical;
@@ -431,6 +433,7 @@ table {
 
 h1,
 h2,
+h3,
 h4,
 h5,
 h6 {
@@ -2325,7 +2328,7 @@ select {
 }
 
 .text-left {
-  /* text-align: left; */
+  text-align: left;
 }
 
 .text-center {
