@@ -11,11 +11,10 @@ export default function Index() {
   return (
     <>
       <IndexNavbar fixed />
-      <marquee className="marq">KOTAK EDUCATION FOUNDATION</marquee>
-      <section className="header relative items-center flex h-screen max-h-860-px" style={{marginTop:"-120px"}}>
-        <div className="container mx-auto items-center flex flex-wrap">
-          <div className="w-full md:w-8/12 lg:w-6/12 xl:w-6/12 px-4">
-            <div className="pt-32 sm:pt-0">
+
+      <div className="container row pt-32">
+        <div className="col-sm-8">
+          <div className="pt-32 sm:pt-0">
               <h2 className="font-semibold text-4xl text-blueGray-600">
                 WHAT IS THE NGO ABOUT?
               </h2>
@@ -23,16 +22,12 @@ export default function Index() {
                  Our mission is to support children & youth from underprivileged families through different education based interventions to rise above the poverty line and lead a life of dignity through sustainable processes.
               </p>
               
-            </div>
           </div>
         </div>
+        <div className="col-sm-12 pt-32 text-center">
         <ImageSlider slides={SliderData}></ImageSlider>
-        {/* <img
-          className="absolute top-0 b-auto right-0 pt-16 sm:w-6/12 -mt-48 sm:mt-0 w-10/12 max-h-860px"
-          src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-          alt="..."
-        /> */}
-      </section>
+        </div>
+      </div>
         
       
 
